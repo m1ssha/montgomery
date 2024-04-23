@@ -1,1 +1,1 @@
-print("Hello world")
+from functions import mod_inverse
