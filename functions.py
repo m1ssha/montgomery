@@ -1,13 +1,22 @@
-def gcd_extended(a, b):
-      if b == 0:
-        return (a, 1, 0)
-      else:
-        (d, x1, y1) = gcd_extended(b, a % b)
-        return (d, y1, x1 - (a // b) * y1)
+def calculate_r(n):
+    for i in range(0, 32):
+        r = 2 ** i
+        if (r > n) and (r / 2 <= n):
+            return i
 
-def mod_inverse(a, m):
-      (d, x, y) = gcd_extended(a, m)
-      if d != 1:
-        return -1
-      else:
-        return (x % m)
+
+def negative_inverse_calc(n, bit_width, base):
+    def_base = 2 ** (bit_width - 1)
+    neg_inverse = base - n ** (def_base - 1) % base
+    return neg_inverse
+
+
+def product(a, b, r, n, bit_width):
+    t = a * b % r
+    m = (t * negative_inverse_calc(n, bit_width, r)) % r
+    s = (a * b + m * n) / r
+    if s >= n:
+        return s - n
+    else:
+        return s
+
