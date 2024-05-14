@@ -1,9 +1,15 @@
 def calculate_r(n):
     for i in range(0, 32):
         r = 2 ** i
-        if (r > n) and (r / 2 <= n):
+        if (r > n) and (r / 2 <= n) and gcd(r, n) == 1:
             return i
 
+
+def gcd(r, n):
+    if n == 0:
+        return r
+    else:
+        return gcd(n, r % n)
 
 def negative_inverse_calc(n, bit_width, base):
     def_base = 2 ** (bit_width - 1)
