@@ -19,10 +19,10 @@ sheet.append(["a", "b", "n", "Result", "Execution Time", "Memory Usage"])
 
 
 if __name__ == "__main__":
-    for _ in range(100):
-        a = random.randint(1, 10000000000)
-        b = random.randint(1, 10000000000)
-        n = random.randint(1, 1000000)
+    for _ in range(25):
+        a = random.randint(1, 10000000000000000000)
+        b = random.randint(1, 10000000000000000000)
+        n = random.randint(1, 100000000000000)
 
         if n % 2 != 0:
             output = run_main_with_args(a, b, n)
@@ -39,4 +39,4 @@ if __name__ == "__main__":
 
                 sheet.append([a, b, n, result, execution_time, memory_usage])
 
-        workbook.save("results.xlsx")
+        workbook.save("results2.xlsx")
