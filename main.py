@@ -5,10 +5,10 @@ import time
 
 
 def print_usage():
-    print("Используй: python main.py <a> <b> <m>")
+    print("Используй: python main.py <a> <b> <n>")
     print("<a>: первое число")
     print("<b>: второе число")
-    print("<m>: модуль")
+    print("<n>: модуль")
 
 
 if __name__ == '__main__':
