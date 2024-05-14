@@ -1,5 +1,5 @@
 def calculate_r(n):
-    for i in range(0, 32):
+    for i in range(0, 1024):
         r = 2 ** i
         if (r > n) and (r / 2 <= n) and gcd(r, n) == 1:
             return i
