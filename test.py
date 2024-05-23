@@ -11,7 +11,6 @@ def run_main_with_args(a, b, n):
     return output.decode('utf-8')
 
 
-# Создаем новую книгу Excel
 workbook = openpyxl.Workbook()
 sheet = workbook.active
 sheet.title = "Results"
@@ -22,7 +21,7 @@ if __name__ == "__main__":
     for _ in range(25):
         a = random.randint(1, 10000000000000000000)
         b = random.randint(1, 10000000000000000000)
-        n = random.randint(1, 100000000000000)
+        n = random.randint(1, 99999999)
 
         if n % 2 != 0:
             output = run_main_with_args(a, b, n)
@@ -39,4 +38,4 @@ if __name__ == "__main__":
 
                 sheet.append([a, b, n, result, execution_time, memory_usage])
 
-        workbook.save("results2.xlsx")
+        workbook.save("results4.xlsx")

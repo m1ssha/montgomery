@@ -2,6 +2,7 @@ import sys
 import psutil
 import multiplication as m
 import time
+import gmpy2
 
 
 def print_usage():
@@ -17,9 +18,9 @@ if __name__ == '__main__':
     else:
         start_time = time.time()
 
-        a = int(sys.argv[1])
-        b = int(sys.argv[2])
-        n = int(sys.argv[3])
+        a = gmpy2.mpz(sys.argv[1])
+        b = gmpy2.mpz(sys.argv[2])
+        n = gmpy2.mpz(sys.argv[3])
 
         result = m.multiplication(a, b, n)
         print(f'Результат выполнения программы: {result}')
