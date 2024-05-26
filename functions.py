@@ -2,12 +2,12 @@ import gmpy2
 
 
 def calculate_r(n):
-    i = n.bit_length() + 1
-    r = gmpy2.mpz(2) ** i
+    k = n.bit_length()
+    r = gmpy2.mpz(2) ** k
     while gmpy2.gcd(r, n) != 1:
-        i += 1
-        r = gmpy2.mpz(2) ** i
-    return i
+        k += 1
+        r = gmpy2.mpz(2) ** k
+    return k
 
 
 def negative_inverse_calc(n, bit_width, base):
