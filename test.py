@@ -12,6 +12,7 @@ sheet.title = "Results"
 sheet.append(["a", "b", "n", "Result", "Время выполнения программы (сек)", "Использование памяти (мБ)"])
 
 bits = 150000
+print(f"Заданное число бит = {bits}")
 
 
 if __name__ == "__main__":
