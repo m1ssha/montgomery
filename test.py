@@ -11,7 +11,7 @@ sheet = workbook.active
 sheet.title = "Results"
 sheet.append(["a", "b", "n", "Result", "Время выполнения программы (сек)", "Использование памяти (мБ)"])
 
-bits = 200000
+bits = 1001
 print(f"Заданное число бит = {bits}")
 
 
@@ -22,7 +22,7 @@ if __name__ == "__main__":
         b = gmpy2.mpz(random.getrandbits(bits))
         n = gmpy2.mpz(random.getrandbits(bits))
 
-        print(f"Количество знаков в числе:\na: {len(str(a))}\nb: {len(str(b))}\nn: {len(str(n))}\n")
+        print(f"Количество знаков в числе:\na: {len(str(a))}\nb: {len(str(b))}\nn: {len(str(n))}")
 
         if n % 2 == 0:
             n += 1
@@ -32,6 +32,9 @@ if __name__ == "__main__":
         execution_time = end_time - start_time
         print(f"Время выполнения: {execution_time}")
         memory_usage = psutil.Process().memory_info().rss / 1024**2
+
+        print(f"Проверка корректности: {a * b % n == result}")
+        print(f"\n===============================================\n")
 
         sheet.append([str(a), str(b), str(n), str(result), execution_time, memory_usage])
 
