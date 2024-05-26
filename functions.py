@@ -2,17 +2,10 @@ import gmpy2
 
 
 def calculate_r(n):
-    for i in range(0, 2048):
+    for i in range(0, 2**100):
         r = gmpy2.mpz(2) ** i
-        if (r > n) and (r / 2 <= n) and gcd(r, n) == 1:
+        if (r > n) and (r / 2 <= n) and gmpy2.gcd(r, n) == 1:
             return i
-
-
-def gcd(r, n):
-    if n == 0:
-        return r
-    else:
-        return gcd(n, r % n)
 
 
 def negative_inverse_calc(n, bit_width, base):
