@@ -2,7 +2,7 @@ import gmpy2
 
 
 def calculate_r(n):
-    i = n.bit_length() + 1  # Start with the bit length of n plus one
+    i = n.bit_length() + 1
     r = gmpy2.mpz(2) ** i
     while gmpy2.gcd(r, n) != 1:
         i += 1
