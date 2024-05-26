@@ -2,10 +2,12 @@ import gmpy2
 
 
 def calculate_r(n):
-    for i in range(0, 2**100):
+    i = n.bit_length() + 1  # Start with the bit length of n plus one
+    r = gmpy2.mpz(2) ** i
+    while gmpy2.gcd(r, n) != 1:
+        i += 1
         r = gmpy2.mpz(2) ** i
-        if (r > n) and (r / 2 <= n) and gmpy2.gcd(r, n) == 1:
-            return i
+    return i
 
 
 def negative_inverse_calc(n, bit_width, base):
@@ -16,7 +18,8 @@ def negative_inverse_calc(n, bit_width, base):
 
 def product(a, b, r, n, bit_width):
     t = (a * b) % r
-    m = (t * negative_inverse_calc(n, bit_width, r)) % r
+    neg_inverse = negative_inverse_calc(n, bit_width, r)
+    m = (t * neg_inverse) % r
     s = (a * b + m * n) // r
     if s >= n:
         return s - n

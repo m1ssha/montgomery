@@ -8,6 +8,6 @@ def multiplication(a, b, n):
     x = (a * r) % n
     y = (b * r) % n
     montg_product = functions.product(x, y, r, n, bit_width)
-    product = functions.product(montg_product, gmpy2.mpz(1), r, n, bit_width)
+    product_result = functions.product(montg_product, gmpy2.mpz(1), r, n, bit_width)
 
-    return product
+    return product_result
