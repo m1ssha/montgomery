@@ -29,5 +29,5 @@ if __name__ == '__main__':
         execution_time = end_time - start_time
         print(f"Время выполнения программы: {execution_time:.4f} секунд")
 
-        memory_usage = psutil.Process().memory_info().rss / 1024
-        print(f"Затраченная оперативная память: {memory_usage} кБ")
+        memory_usage = psutil.Process().memory_info().rss / 1024**2
+        print(f"Затраченная оперативная память: {memory_usage} мБ")
