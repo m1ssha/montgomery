@@ -11,7 +11,7 @@ sheet = workbook.active
 sheet.title = "Results"
 sheet.append(["a", "b", "n", "Result", "Время выполнения программы (сек)", "Использование памяти (мБ)"])
 
-bits = 150000
+bits = 200000
 print(f"Заданное число бит = {bits}")
 
 
